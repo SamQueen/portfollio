@@ -1,6 +1,6 @@
 import { disableBottom, enableSlide, setSection } from '@/lib/slice';
 import React from 'react'
-import { useDispatch, UseDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import Image from 'next/image';
 
 type SectionWrapperProps = {

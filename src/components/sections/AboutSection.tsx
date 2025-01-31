@@ -22,7 +22,7 @@ const AboutSection = () => {
         />
       </div>
 
-      <p className='text-lg mt-10'>Welcome to my corner of the web! My name is Sam Queen and I am a passionate developer on a mission to build beautiful web applications. My role as a developer goes beyond writing lines of code; it's about turning ideas into functional websites.</p>
+      <p className='text-lg mt-10'>Welcome to my corner of the web! My name is Sam Queen and I am a passionate developer on a mission to build beautiful web applications. My role as a developer goes beyond writing lines of code; its about turning ideas into functional websites.</p>
     </SectionWrapper>
   )
 }

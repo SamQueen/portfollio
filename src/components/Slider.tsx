@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { SlideItem } from '../../types';
 import { slideItems } from '../../data';
-import { useDispatch, UseDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { disableNav, disableSlide, enableBottom, setSection } from '@/lib/slice';
 
 type SliderProps = {
@@ -24,6 +24,10 @@ const Slider: React.FC<SliderProps> = ({ focusSlider, setShowAbout, setShowSkill
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const focusStyle = 'border-4 border-white bg-black items-center fledx'
+
+    // temp fix for build process
+    setShowAbout(true);
+    setShowSkills(true);
 
     // init offset carousel items 
     useEffect(() => {

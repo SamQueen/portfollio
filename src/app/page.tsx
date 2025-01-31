@@ -1,21 +1,23 @@
 "use client"
-import Image from "next/image";
 import Slider from '../components/Slider'
 import Navigator from "@/components/Navigator";
 import { useEffect, useState } from "react";
 import AboutSection from "@/components/sections/AboutSection";
 
-import { disableBottom, disableNav, disableSlide, enableBottom, enableNav, enableSlide, setSection, toggleBottom } from "@/lib/slice";
+import { disableBottom, disableNav, disableSlide, enableNav, enableSlide, setSection } from "@/lib/slice";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/lib/store";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
-import LoadingScreen from "@/components/LoadingScreen";
 
 export default function Home() {
   const [showAbout, setShowAbout] = useState(false);
   const [showSkills, setShowSkills] = useState(false);
+
+  // temp fix for build process
+  console.log(showAbout);
+  console.log(showSkills);
 
   // redux tools
   const focusNav = useSelector((state: RootState) => state.focusNav);

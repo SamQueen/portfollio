@@ -19,7 +19,7 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
             const dateTime = new Date();
             const hours = dateTime.getHours();
             let minutes: string = dateTime.getMinutes().toString();
-            const seconds = dateTime.getSeconds();
+            //const seconds = dateTime.getSeconds();
 
 
             const meridian = (hours <= 12) ? 'AM' : 'PM';
