@@ -1,7 +1,7 @@
 "use client"
 import Slider from '../components/Slider'
 import Navigator from "@/components/Navigator";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import AboutSection from "@/components/sections/AboutSection";
 
 import { disableBottom, disableNav, disableSlide, enableNav, enableSlide, setSection } from "@/lib/slice";
@@ -12,13 +12,6 @@ import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 
 export default function Home() {
-  const [showAbout, setShowAbout] = useState(false);
-  const [showSkills, setShowSkills] = useState(false);
-
-  // temp fix for build process
-  console.log(showAbout);
-  console.log(showSkills);
-
   // redux tools
   const focusNav = useSelector((state: RootState) => state.focusNav);
   const focusSlider = useSelector((state: RootState) => state.focusSlide);
@@ -60,7 +53,7 @@ export default function Home() {
 
   return (
     <div 
-      className="bg-[#4c6cd7] w-screen h-screen px-10 relative bg-center bg-cover overflow-y-auto" 
+      className="bg-[#4c6cd7] w-screen h-screen px-10 relative bg-center bg-cover overflow-y-auto pb-20" 
       style={{ backgroundImage: 'url(/ps4background3.jpg)'}}
     >
 
@@ -69,9 +62,7 @@ export default function Home() {
         <div className={`${focusBottom && 'translate-y-[-200%]'} duration-500`}>
           <Navigator showNav={focusNav} />
           <Slider 
-            focusSlider={focusSlider} 
-            setShowAbout={setShowAbout} 
-            setShowSkills={setShowSkills}
+            focusSlider={focusSlider}
           />
         </div>
 

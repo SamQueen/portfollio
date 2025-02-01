@@ -17,7 +17,8 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ children }) => {
   }
   
   return (
-    <div className='bg-[rgba(50,28,62,0.9)] text-white p-10 ml-[350px] w-[calc(100%-350px)] items-center]'>
+    <div className='bg-[rgba(50,28,62,0.9)] text-white p-10 lg:ml-[200px] xl:ml-[350px] 
+                  lg:w-[calc(100%-250px)] xl:w-[calc(100%-350px)] items-center]'>
       <div
         onClick={() => {handleClose()}}
         className='bg-white w-10 h-10 cursor-pointer flex justify-center items-center mb-10'

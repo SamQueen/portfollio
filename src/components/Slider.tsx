@@ -8,11 +8,9 @@ import { disableNav, disableSlide, enableBottom, setSection } from '@/lib/slice'
 
 type SliderProps = {
     focusSlider: boolean;
-    setShowAbout: React.Dispatch<React.SetStateAction<boolean>>;
-    setShowSkills: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const Slider: React.FC<SliderProps> = ({ focusSlider, setShowAbout, setShowSkills }) => {
+const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
     const [itemIndex, setItemIndex] = useState(0);
     const [animationLock, setAnimationLock] = useState(false);
     const [windowSize, setWindowSize] = useState(0);
@@ -24,10 +22,6 @@ const Slider: React.FC<SliderProps> = ({ focusSlider, setShowAbout, setShowSkill
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const focusStyle = 'border-4 border-white bg-black items-center fledx'
-
-    // temp fix for build process
-    setShowAbout(true);
-    setShowSkills(true);
 
     // init offset carousel items 
     useEffect(() => {
@@ -106,7 +100,6 @@ const Slider: React.FC<SliderProps> = ({ focusSlider, setShowAbout, setShowSkill
 
         slideItems.forEach((item) => {
             item.style.transform = `translateX(${-(shiftAmount)}px)`;
-            console.log('shift amount: ', shiftAmount);
         });
 
         setItemIndex(dIndex);

@@ -1,5 +1,4 @@
-import { NavOption, SlideItem } from "./types";
-import swift from 'programming-languages-logos/src/swift/swift.svg'
+import { JobType, NavOption, SlideItem } from "./types";
 import cpp from 'programming-languages-logos/src/cpp/cpp.png'
 import python from 'programming-languages-logos/src/python/python.png'
 import typescript from 'programming-languages-logos/src/typescript/typescript.png'
@@ -124,6 +123,36 @@ export const skills = [
             {name: "Vercel", icon: '/icons/vercel.svg'},
             {name: "Netlify", icon: '/icons/netlify.svg'},
             {name: "GitHub Actions", icon: '/icons/githubactions.svg'},
+        ]
+    },
+]
+
+export const jobDetails: JobType[] = [
+    {
+        company: 'GBCS Group',
+        title: 'Frontend Developer Intern',
+        imgPath: '/jobs/gbcs.png',
+        desc: 'This was a great learning opportunity. Not only did I gain new technical skills, but I also learned how to thrive in a startup environment. I had the incredible opportunity to lead a team of nine developers in building a large-scale Next.js application. I had the excellent opportunity of leading a team of 9 developers in the creation of a large-scale Next.js application.',
+        techStack: [
+            {name: 'Next.js', imgPath: '/icons/next.svg'},
+            {name: 'Typescript', imgPath: typescript},
+            {name: 'Javascript', imgPath: javascript},
+            {name: 'React', imgPath: '/icons/react.svg'},
+            {name: 'Tailwind CSS', imgPath: '/icons/tailwindcss.svg'},
+            {name: 'D3', imgPath: '/icons/d3.svg'},
+            {name: 'Github', imgPath: '/icons/github.svg'},
+        ]
+    },
+    {
+        company: 'Phoenix College NASA Ascend',
+        title: 'Software Engineer Intern',
+        imgPath: '/jobs/nasa.png',
+        desc: 'I am glad to have had the opportunity to launch a weather balloon payload over 100,000 feet into the atmosphere. Working alongside a team of both skilled and novice engineers, we successfully achieved our flight goals and gathered valuable data on the limits of our atmosphere—all while learning in an engaging environment.',
+        techStack: [
+            {name: 'Python', imgPath: python},
+            {name: 'C++', imgPath: cpp},
+            {name: 'Raspberry Pi', imgPath: '/jobs/rasp.png'},
+            {name: 'Arduino', imgPath: '/jobs/arduino.png'},
         ]
     },
 ]

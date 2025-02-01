@@ -20,3 +20,7 @@ body {
   background: var(--background);
   font-family: var(--font-montserrat), sans-serif;
 }
+
+.animate-skill-items {
+  display: hidden;
+}
