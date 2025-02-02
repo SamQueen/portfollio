@@ -33,8 +33,8 @@ const ContactSection = () => {
           <li key={index} className='cursor-pointer'>
             <Image 
               src={path}
-              height={50}
-              width={50}
+              height={35}
+              width={35}
               alt=""
             />
           </li>

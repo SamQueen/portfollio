@@ -18,7 +18,6 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const dispatch = useDispatch();
-
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const focusStyle = 'border-4 border-white bg-black items-center fledx'

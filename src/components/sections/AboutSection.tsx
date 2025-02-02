@@ -41,7 +41,7 @@ const AboutSection = () => {
           <Image 
             className='ml-20'
             src='/meaf2.jpg' 
-            width={250} 
+            width={300} 
             height={0} 
             layout="intrinsic" 
             alt="profile" 

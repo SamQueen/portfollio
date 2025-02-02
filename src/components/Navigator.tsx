@@ -1,5 +1,5 @@
 "use client"
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Image from 'next/image';
 import HoverContainer from './HoverContainer';
 import { navOptions } from '../../data';
@@ -12,7 +12,15 @@ type NavigatorProps = {
 const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
     const [time, setTime] = useState('00:00:00');
     const [currentIndex, setCurrentIndex] = useState(0);
-    const focusStyle = "border-2 border-white";
+    const audioRef = useRef<HTMLAudioElement>(null);
+
+    // play audio
+    const playAudio = () => {
+        if (audioRef.current) {
+            audioRef.current.currentTime = 0; // reset to begining of audio file
+            audioRef.current.play();
+        }
+    }
 
     useEffect(() => {
         const calcTime = () => {
@@ -20,7 +28,6 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
             const hours = dateTime.getHours();
             let minutes: string = dateTime.getMinutes().toString();
             //const seconds = dateTime.getSeconds();
-
 
             const meridian = (hours <= 12) ? 'AM' : 'PM';
 
@@ -44,13 +51,25 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
             }
 
             if (event.key === 'a' || event.key === 'ArrowLeft') {
-                const nextIndex = Math.max((currentIndex - 1), 0); // prevents a negetive index
+                /// prevent negetive index
+                if (currentIndex === 0) {
+                    return;
+                }
+
+                const nextIndex = currentIndex - 1;
                 setCurrentIndex(nextIndex);
+                playAudio();
             }
 
             if (event.key === 'd' || event.key === 'ArrowRight') {
-                const nextIndex = Math.min((currentIndex + 1), (navOptions.length - 1)); // prevents a negetive index
+                // prevents a out of bound item index
+                if (currentIndex === (navOptions.length - 1)) {
+                    return;
+                }
+                
+                const nextIndex = currentIndex + 1;
                 setCurrentIndex(nextIndex);
+                playAudio();
             }
         }
 
@@ -61,8 +80,16 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
         };
     }, [setCurrentIndex, currentIndex, showNav]);
 
+    const handleItemClick = (index: number) => {
+        setCurrentIndex(index);
+        playAudio();
+    }
+
     return (
         <nav className={`${showNav && "pt-[300px]"} min-h-32 duration-500 px-10 text-white text-xl tracking-wide relative`}>
+            
+            <audio ref={audioRef} src="/audio/select6.wav" />
+            
             <div 
                 className={`absolute top-10 cursor-pointer`}
                 onClick={() => {} }
@@ -119,8 +146,8 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
                 {navOptions.map((item: NavOption, index:number) => (
                     <div 
                         key={index} 
-                        className={`${(currentIndex == index) && focusStyle} cursor-pointer p-3`}
-                        onClick={() => { setCurrentIndex(index) }}
+                        className={`${(currentIndex == index) ? 'border-white' : 'border-transparent'} cursor-pointer p-3 border-b-2`}
+                        onClick={() => { handleItemClick(index) }}
                     >
                         <Image 
                             src={item.iconPath}

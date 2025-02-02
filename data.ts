@@ -9,37 +9,17 @@ import javascript from 'programming-languages-logos/src/javascript/javascript.pn
 export const navOptions: NavOption[] = [
     {
         name: 'settings',
-        iconPath: './icons/trophy.svg',
+        iconPath: './icons/house-solid.svg',
         alt: '',
     },
     {
         name: 'settings',
-        iconPath: './icons/trophy.svg',
+        iconPath: './icons/circle-question.svg',
         alt: '',
     },
     {
         name: 'settings',
-        iconPath: './icons/trophy.svg',
-        alt: '',
-    },
-    {
-        name: 'settings',
-        iconPath: './icons/trophy.svg',
-        alt: '',
-    },
-    {
-        name: 'settings',
-        iconPath: './icons/trophy.svg',
-        alt: '',
-    },
-    {
-        name: 'settings',
-        iconPath: './icons/trophy.svg',
-        alt: '',
-    },
-    {
-        name: 'settings',
-        iconPath: './icons/trophy.svg',
+        iconPath: './icons/user-tie-solid.svg',
         alt: '',
     },
     {
@@ -80,11 +60,12 @@ export const slideItems: SlideItem[] = [
         imgPath: '/projects/pictureper.png', 
         section: "proj3ct4"},
     { 
-        imgPath: '/ghost.webp', 
-        section: "ghost"},
+        imgPath: '/projects/aboutApp.png', 
+        section: "info"
+    },
     { 
-        imgPath: '/ghost.webp', 
-        section: "ghost"
+        imgPath: '/projects/aboutApp.png', 
+        section: "info"
     },
 ];
 
