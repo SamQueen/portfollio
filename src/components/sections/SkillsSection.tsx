@@ -19,7 +19,7 @@ const SkillsSection = () => {
                     src={skill.icon}
                     height={40}
                     width={40}
-                    className='mx-auto mb-2'
+                    className='mx-auto mb-2 hover:scale-[120%] duration-500'
                     alt=""
                     priority
                   />

@@ -9,7 +9,7 @@ type JobProps = {
 const Job: React.FC<JobProps> = ({ job }) => {
 
     return (
-        <div className='mt-16'>
+        <div className='mt-16 mb-32'>
             <div className='flex items-center'>
             <Image 
                 src={job.imgPath}
