@@ -68,7 +68,7 @@ export default function Home() {
         </div>
 
 
-        {(activeSection === 'about') && (
+        {/* {(activeSection === 'about') && (
           <AboutSection />
         )}
 
@@ -98,9 +98,7 @@ export default function Home() {
 
         {(activeSection === 'project4') && (
           <ProjectSection1 projectKey={activeSection} />
-        )}
-
-
+        )} */}
     </div>
   );
 }

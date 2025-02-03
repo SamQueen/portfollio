@@ -21,7 +21,7 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const mobileScreenBreakPoint = 710;
-    const focusStyle = 'border-4 border-white bg-black items-center fledx'
+    const focusStyle = 'border-4 border-white bg-black items-center'
 
     // init offset carousel items 
     useEffect(() => {
@@ -102,7 +102,7 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
         }
 
         playAudio();
-console.log(shiftAmount);
+        
         slideItems.forEach((item) => {
             item.style.transform = `translateX(${-(shiftAmount)}px)`;
         });
@@ -146,8 +146,8 @@ console.log(shiftAmount);
     }
 
     return (
-        <div className=' absolute translate-x-[-2.5rem] w-full h-[300px] flex gap-2 
-                        overflow-x-hidden overflow-y-auto'>
+        <div className={`absolute translate-x-[-2.5rem] w-screen h-[300px] flex gap-2 
+                        overflow-x-hidden overflow-y-auto`}>
             
             <audio ref={audioRef} src="/audio/select-5.wav" />
 
@@ -174,9 +174,6 @@ console.log(shiftAmount);
                     </div>
                 </div>
             ))}
-
-            {/* <div onClick={() => { slideTo(itemIndex - 1)}} className='absolute left-0 bg-red-400 cursor-pointer'>Button1</div>
-            <div onClick={() => { slideTo(itemIndex + 1)}} className='absolute right-0 bg-red-400 cursor-pointer'>Button2</div> */}
         </div>
     )
 }
