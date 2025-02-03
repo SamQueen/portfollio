@@ -20,6 +20,7 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
     const dispatch = useDispatch();
     const translateAmount = 210;
     const screenBreakPoint = 1100;
+    const mobileScreenBreakPoint = 710;
     const focusStyle = 'border-4 border-white bg-black items-center fledx'
 
     // init offset carousel items 
@@ -38,7 +39,7 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
                 if (windowWidth >= screenBreakPoint) {
                     item.style.transform = `translateX(${translateAmount}px)`;
                 } else {
-                    item.style.transform = `translateX(${0}px)`;
+                    item.style.transform = `translateX(${10}px)`;
                 }
             });
         }
@@ -90,13 +91,18 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
             shiftAmount = 0;
         }
 
-        // check if at beginning or end of slide
+        // prevent ignored first shift at index 0
+        if (windowSize <= mobileScreenBreakPoint) {
+            shiftAmount = translateAmount * (dIndex) - 25;
+        }
+
+        // check if at beginning or end of slide prevent out-of-bounds
         if (dIndex < 0 || dIndex >= slideItems.length) {
             return
         }
 
         playAudio();
-
+console.log(shiftAmount);
         slideItems.forEach((item) => {
             item.style.transform = `translateX(${-(shiftAmount)}px)`;
         });
