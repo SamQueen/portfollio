@@ -58,7 +58,7 @@ export const slideItems: SlideItem[] = [
         section: "project3"},
     { 
         imgPath: '/projects/pictureper.png', 
-        section: "proj3ct4"},
+        section: "project4"},
     { 
         imgPath: '/projects/aboutApp.png', 
         section: "info"
@@ -134,6 +134,66 @@ export const jobDetails: JobType[] = [
             {name: 'C++', imgPath: cpp},
             {name: 'Raspberry Pi', imgPath: '/jobs/rasp.png'},
             {name: 'Arduino', imgPath: '/jobs/arduino.png'},
+        ]
+    },
+]
+
+export const projects = [
+    {
+        name: 'Startup 3 -  React App',
+        desc: 'A fully responsive web application developed based on the provided Figma design, ensuring seamless user experience and pixel-perfect implementation. The project includes attention to detail in translating the design into functional code, with optimized performance and cross-browser compatibility.',
+        gitLink: '',
+        demoLink: '',
+        imgPath: '/projects/figma.png',
+        key: 'project1',
+        background: '/projects/figma2.png',
+        techStack: [
+            '/icons/react.svg',
+            typescript,
+            '/icons/tailwindcss.svg',
+            '/icons/github.svg',
+        ]
+    },
+    {
+        name: 'Neflix Clone - React App',
+        desc: "Presenting a React-based portfolio project showcasing a Netflix-inspired streaming platform, integrated with the TMDB API for an extensive collection of movies and TV shows.",
+        gitLink: '',
+        demoLink: '',
+        imgPath: '/projects/net.png',
+        key: 'project2',
+        background: '',
+        techStack: [
+            '/icons/react.svg',
+            '/icons/tailwindcss.svg',
+            '/icons/git.svg',
+        ]
+    },
+    {
+        name: 'Flexible Slide - NPM Package',
+        desc: 'A responsive React carousel designed for integration into my Netflix clone project, encapsulated within an npm package for versatile usage across various projects.',
+        gitLink: '',
+        demoLink: '',
+        imgPath: '/projects/npm.png',
+        key: 'project3',
+        background: '',
+        techStack: [
+            '/icons/react.svg',
+            typescript,
+            '/icons/git.svg',
+        ]
+    },
+    {
+        name: 'Picture Perfect - Next.js Projectw',
+        desc: "An Instagram-inspired CRUD application enabling users to log in, share photos, comment on posts, and personalize their profiles.",
+        gitLink: '',
+        demoLink: '',
+        imgPath: '/projects/pictureper.png',
+        key: 'project4',
+        background: '',
+        techStack: [
+            '/icons/next.svg',
+            javascript,
+            '/jobs/rasp.png',
         ]
     },
 ]

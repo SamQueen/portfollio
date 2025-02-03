@@ -10,6 +10,7 @@ import { RootState } from "@/lib/store";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
+import ProjectSection1 from '@/components/sections/ProjectSection1';
 
 export default function Home() {
   // redux tools
@@ -82,6 +83,23 @@ export default function Home() {
         {(activeSection === 'contact') && (
           <ContactSection />
         )}
+
+        {(activeSection === 'project1') && (
+          <ProjectSection1 projectKey={activeSection} />
+        )}
+
+        {(activeSection === 'project2') && (
+          <ProjectSection1 projectKey={activeSection} />
+        )}
+
+        {(activeSection === 'project3') && (
+          <ProjectSection1 projectKey={activeSection} />
+        )}
+
+        {(activeSection === 'project4') && (
+          <ProjectSection1 projectKey={activeSection} />
+        )}
+
 
     </div>
   );

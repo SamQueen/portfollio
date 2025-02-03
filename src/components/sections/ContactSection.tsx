@@ -17,7 +17,7 @@ const ContactSection = () => {
 
       <form className='flex flex-col gap-5 max-w-[500px] mx-auto'>
         <Input placeholder='Name' />
-        <Input placeholder='Email' />
+        <Input placeholder='Email' type="email" />
         <Input placeholder='Subject' />
         <textarea className='focus:outline-none py-1 px-3 text-black' placeholder='Message' />
 
