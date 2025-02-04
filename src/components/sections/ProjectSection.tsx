@@ -18,11 +18,11 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
             className='relative mx-auto bg-repeat-none bg-cover bg-center text-white'
         >
             {/* opacity wrapper */}
-            <div className=' px-32 py-20 bg-[rgba(10,10,10,0.8)]'>
+            <div className=' px-5 lg:px-32 py-10 md:py-20 bg-[rgba(10,10,10,0.8)]'>
 
                 <BackButton />
-                <div className='flex justify-between gap-20'>
-                    <div className='w-[320px]'>
+                <div className='lg:flex justify-between gap-20'>
+                    <div className='hidden lg:block w-[320px]'>
                         <Image 
                             src={project?.imgPath || ''}
                             height={0}
@@ -33,9 +33,20 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
                         <Button text="GITHUB REPO" />
                     </div>
                     
-                    <div className='w-[calc(100%-320px)] flex flex-col justify-between'>
+                    <div className='w-full lg:w-[calc(100%-320px)] flex flex-col justify-between'>
                         <div>
-                            <h1 className='text-5xl  p-3'>{project?.name || ''}</h1>
+                            <h1 className='text-2xl md:text-5xl  p-3'>{project?.name || ''}</h1>
+
+                            <div className='lg:hidden w-[250px] mt-10 mx-auto'>
+                                <Image 
+                                    src={project?.imgPath || ''}
+                                    height={0}
+                                    width={250}
+                                    alt=""
+                                />
+                                <Button text="START DEMO" className='my-1' />
+                                <Button text="GITHUB REPO" />
+                            </div>
 
                             <h1 className='text-lg  p-3 my-10'>{project?.desc || ''}</h1>
                         </div>
