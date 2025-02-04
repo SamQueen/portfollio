@@ -14,8 +14,8 @@ const AboutSection = () => {
           </h1>
 
           <img 
-            src="/profile3.webp"
-            className='lg:hidden h-[150px] mt-10 mx-auto'
+            src="/meaf5.png"
+            className='lg:hidden h-[200px] mt-10 mx-auto'
             alt="profile photo"
           />
 
@@ -34,17 +34,17 @@ const AboutSection = () => {
               ]}
               wrapper="span"
               speed={50}
-              style={{ fontSize: '2em', display: 'inline-block' }}
+              style={{ fontSize: '1.8em', display: 'inline-block' }}
               repeat={Infinity}
             />
           </div>
 
-          <p className='text-lg mt-10'>Welcome to my corner of the web! My name is Sam Queen and I am a passionate developer on a mission to build beautiful web applications. My role as a developer goes beyond writing lines of code; its about turning ideas into functional websites.</p>
+          <p className='text-lg md:mt-10 '>Welcome to my corner of the web! My name is Sam Queen and I am a passionate developer on a mission to build beautiful web applications. My role as a developer goes beyond writing lines of code; its about turning ideas into functional websites.</p>
         </div>
 
         <div className='flex justify-center w-[40%]'>
           <img 
-            src="/profile3.webp"
+            src="/meaf5.png"
             className='hidden lg:block md:h-[200px] lg:h-[250px] xl:h-[300px]'
             alt="profile photo"
           />
