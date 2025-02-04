@@ -18,7 +18,7 @@ const Job: React.FC<JobProps> = ({ job }) => {
                 alt="GBCS"
             />
 
-            <p className='ml-5 text-2xl'>{job.company} - {job.title}</p>
+            <p className='ml-5 text-lg md:text-2xl'>{job.company} - {job.title}</p>
             </div>
 
             <p className='mt-5'>{job.desc}</p>

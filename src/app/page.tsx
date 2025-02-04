@@ -10,7 +10,7 @@ import { RootState } from "@/lib/store";
 import SkillsSection from "@/components/sections/SkillsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
-import ProjectSection1 from '@/components/sections/ProjectSection1';
+import ProjectSection from '@/components/sections/ProjectSection';
 
 export default function Home() {
   // redux tools
@@ -54,7 +54,7 @@ export default function Home() {
 
   return (
     <div 
-      className="bg-[#4c6cd7] w-screen h-screen px-10 relative bg-center bg-cover overflow-y-auto pb-20" 
+      className="bg-[#4c6cd7] w-screen h-screen px-5 relative bg-center bg-cover overflow-x-hidden overflow-y-auto pb-20" 
       style={{ backgroundImage: 'url(/ps4background3.jpg)'}}
     >
 
@@ -68,7 +68,7 @@ export default function Home() {
         </div>
 
 
-        {/* {(activeSection === 'about') && (
+        {(activeSection === 'about') && (
           <AboutSection />
         )}
 
@@ -85,20 +85,20 @@ export default function Home() {
         )}
 
         {(activeSection === 'project1') && (
-          <ProjectSection1 projectKey={activeSection} />
+          <ProjectSection projectKey={activeSection} />
         )}
 
         {(activeSection === 'project2') && (
-          <ProjectSection1 projectKey={activeSection} />
+          <ProjectSection projectKey={activeSection} />
         )}
 
         {(activeSection === 'project3') && (
-          <ProjectSection1 projectKey={activeSection} />
+          <ProjectSection projectKey={activeSection} />
         )}
 
         {(activeSection === 'project4') && (
-          <ProjectSection1 projectKey={activeSection} />
-        )} */}
+          <ProjectSection projectKey={activeSection} />
+        )}
     </div>
   );
 }

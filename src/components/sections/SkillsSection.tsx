@@ -12,13 +12,13 @@ const SkillsSection = () => {
           <div key={index} className='mb-16 items-center overflow-auto'>
             <p className='text-lg mb-5'>{item.skillType} :</p>
 
-            <div className='flex'>
+            <div className='flex flex-wrap justify-center md:justify-start'>
               {item.skillList.map((skill, index) => (
-                <div key={index} className='cursor-pointer animate-skill-items'>
+                <div key={index} className='cursor-pointer w-32 animate-skill-items'>
                   <Image 
                     src={skill.icon}
-                    height={40}
-                    width={40}
+                    height={35}
+                    width={35}
                     className='mx-auto mb-2 hover:scale-[120%] duration-500'
                     alt=""
                     priority

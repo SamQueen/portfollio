@@ -9,7 +9,7 @@ const ExperienceSection = () => {
   
   return (
     <SectionWrapper>
-      <h1 className='text-5xl'>EXPERIENCE</h1>
+      <h1 className='text-2xl md:text-5xl'>EXPERIENCE</h1>
       
       {jobs.map((job: JobType, index) => (
        <div key={index}>

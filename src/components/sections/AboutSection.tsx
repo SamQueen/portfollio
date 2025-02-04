@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import React from 'react'
 import SectionWrapper from './SectionWrapper';
 import { TypeAnimation } from 'react-type-animation';
@@ -7,14 +6,20 @@ const AboutSection = () => {
 
   return (
     <SectionWrapper>
-      <div className='flex'>
+      <div className='lg:flex'>
 
-        <div className='w-[60%]'>
+        <div className='lg:w-[60%]'>
           <h1 className='text-5xl'>
             Hello, my name is <br/>SAM QUEEN
           </h1>
 
-          <div className='mt-10'>
+          <img 
+            src="/profile3.webp"
+            className='lg:hidden h-[150px] mt-10 mx-auto'
+            alt="profile photo"
+          />
+
+          <div className='mt-10 h-32 xl:h-auto'>
             <TypeAnimation
               sequence={[
                 // Same substring at the start will only be typed out once, initially
@@ -38,13 +43,10 @@ const AboutSection = () => {
         </div>
 
         <div className='flex justify-center w-[40%]'>
-          <Image 
-            className='ml-20'
-            src='/meaf2.jpg' 
-            width={300} 
-            height={0} 
-            layout="intrinsic" 
-            alt="profile" 
+          <img 
+            src="/profile3.webp"
+            className='hidden lg:block md:h-[200px] lg:h-[250px] xl:h-[300px]'
+            alt="profile photo"
           />
         </div>
       </div>
