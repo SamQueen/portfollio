@@ -146,7 +146,7 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
     }
 
     return (
-        <div className={`absolute translate-x-[-2.5rem] w-screen h-[300px] flex gap-2 
+        <div className={`absolute translate-x-[-1rem] w-screen h-[300px] flex gap-2 
                         overflow-x-hidden overflow-y-auto`}>
             
             <audio ref={audioRef} src="/audio/select-5.wav" />

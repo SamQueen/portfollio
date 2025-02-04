@@ -164,6 +164,7 @@ export const projects = [
         background: '',
         techStack: [
             '/icons/react.svg',
+            typescript,
             '/icons/tailwindcss.svg',
             '/icons/git.svg',
         ]
