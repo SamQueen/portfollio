@@ -11,6 +11,7 @@ import SkillsSection from "@/components/sections/SkillsSection";
 import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 import ProjectSection from '@/components/sections/ProjectSection';
+import InfoSection from '@/components/sections/InfoSection';
 
 export default function Home() {
   // redux tools
@@ -98,6 +99,10 @@ export default function Home() {
 
         {(activeSection === 'project4') && (
           <ProjectSection projectKey={activeSection} />
+        )}
+
+        {(activeSection ==='info') && (
+          <InfoSection />
         )}
     </div>
   );

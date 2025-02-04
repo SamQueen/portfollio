@@ -8,22 +8,22 @@ import javascript from 'programming-languages-logos/src/javascript/javascript.pn
 
 export const navOptions: NavOption[] = [
     {
-        name: 'settings',
+        name: 'HOME',
         iconPath: './icons/house-solid.svg',
         alt: '',
     },
     {
-        name: 'settings',
+        name: 'ABOUT APPLICATION',
         iconPath: './icons/circle-question.svg',
         alt: '',
     },
     {
-        name: 'settings',
+        name: 'PROFESSIONAL PORTFOLIO',
         iconPath: './icons/user-tie-solid.svg',
         alt: '',
     },
     {
-        name: 'settings',
+        name: 'AWARDS',
         iconPath: './icons/trophy.svg',
         alt: '',
     },
@@ -54,11 +54,11 @@ export const slideItems: SlideItem[] = [
         imgPath: '/projects/net.png', 
         section: "project2"},
     { 
-        imgPath: '/projects/npm.png', 
-        section: "project3"},
-    { 
         imgPath: '/projects/pictureper.png', 
         section: "project4"},
+    { 
+        imgPath: '/projects/npm.png', 
+        section: "project3"},
     { 
         imgPath: '/projects/aboutApp.png', 
         section: "info"
