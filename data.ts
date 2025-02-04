@@ -184,7 +184,7 @@ export const projects = [
         ]
     },
     {
-        name: 'Picture Perfect - Next.js Projectw',
+        name: 'Picture Perfect - Next.js Project',
         desc: "An Instagram-inspired CRUD application enabling users to log in, share photos, comment on posts, and personalize their profiles.",
         gitLink: '',
         demoLink: '',

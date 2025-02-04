@@ -3,8 +3,9 @@ import React, { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { SlideItem } from '../../types';
 import { slideItems } from '../../data';
-import { useDispatch } from 'react-redux';
-import { disableNav, disableSlide, enableBottom, setSection } from '@/lib/slice';
+import { useDispatch, useSelector } from 'react-redux';
+import { disableBottom, disableNav, disableSlide, enableBottom, enableSlide, setSection } from '@/lib/slice';
+import { RootState } from '@/lib/store';
 
 type SliderProps = {
     focusSlider: boolean;
@@ -18,6 +19,10 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const dispatch = useDispatch();
+    const focusNav = useSelector((state: RootState) => state.focusNav);
+    //const focusSlider = useSelector((state: RootState) => state.focusSlide);
+    const focusBottom = useSelector((state: RootState) => state.focusBottom);
+
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const mobileScreenBreakPoint = 710;
@@ -76,7 +81,10 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
 
         // check if slider is focused
         if (!focusSlider) {
-            return;
+            dispatch(disableNav());
+            dispatch(enableSlide());
+            dispatch(disableBottom());
+            dispatch(setSection(''));
         }
 
         // check if animation is lock
@@ -113,6 +121,10 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
     // add event listeners
     useEffect(() => {
         const handleKeyPress = (event: KeyboardEvent) => {
+
+            if (!focusSlider) {
+                return;
+            }
 
             if (event.key === 'a' || event.key === 'ArrowLeft') {
                 slideTo(itemIndex-1);
