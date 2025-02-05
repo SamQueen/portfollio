@@ -10,11 +10,11 @@ const SkillsSection = () => {
       <div>
         {skills.map((item, index) => (
           <div key={index} className='mb-16 items-center overflow-auto'>
-            <p className='text-lg mb-5'>{item.skillType} :</p>
+            <p className='text-lg text-center mb-5'>{item.skillType}</p>
 
-            <div className='flex flex-wrap justify-center md:justify-start'>
+            <div className='flex flex-wrap justify-center mb-10'>
               {item.skillList.map((skill, index) => (
-                <div key={index} className='cursor-pointer w-32 animate-skill-items'>
+                <div key={index} className='cursor-pointer w-32 animate-skill-items mb-10 md:mb-0'>
                   <Image 
                     src={skill.icon}
                     height={35}

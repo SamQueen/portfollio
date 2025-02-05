@@ -91,7 +91,7 @@ export const skills = [
         ]
     },
     {
-        skillType: "More Tools",
+        skillType: "State Management & Version Control",
         skillList: [
             {name: "Redux", icon: '/icons/redux.svg'},
             {name: "Git", icon: '/icons/git.svg'},
@@ -101,9 +101,11 @@ export const skills = [
     {
         skillType: "CI/CD & Deployment",
         skillList: [
+            {name: "Amazon AWS", icon: '/icons/aws.png'},
             {name: "Vercel", icon: '/icons/vercel.svg'},
             {name: "Netlify", icon: '/icons/netlify.svg'},
             {name: "GitHub Actions", icon: '/icons/githubactions.svg'},
+            {name: "Heroku", icon: '/icons/heroku.png'}
         ]
     },
 ]
