@@ -12,8 +12,9 @@ const Slider = () => {
     const [animationLock, setAnimationLock] = useState(false);
     const [windowSize, setWindowSize] = useState(0);
     const [maxRightTranslate, setMaxRightTranslate] = useState(500);
-    const [touchStart, setTouchStart] = useState<number | null>(null);
-    const [touchEnd, setTouchEnd] = useState<number | null>(null);
+
+    const touchStart = useRef<number | null>(null);
+    const touchEnd = useRef<number | null>(null);
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const dispatch = useDispatch();
@@ -155,18 +156,18 @@ const Slider = () => {
     }
 
     const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-        setTouchEnd(null);
-        setTouchStart(e.targetTouches[0].clientX);
+        touchEnd.current = null;
+        touchStart.current = e.targetTouches[0].clientX;
     }
 
-    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => setTouchEnd(e.targetTouches[0].clientX);
+    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => touchEnd.current = e.targetTouches[0].clientX;
 
     const onTouchEnd = () => {
-        if (!touchStart || !touchEnd) {
+        if (!touchStart.current || !touchEnd.current) {
             return;
         }  
 
-        const distance = touchStart - touchEnd;
+        const distance = touchStart.current - touchEnd.current;
         const nextSlideIndex = (distance >= 0) ? (itemIndex + 1) : (itemIndex - 1); // determine which direction to swipe
 
         // check for min distance swipe
