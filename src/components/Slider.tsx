@@ -7,22 +7,19 @@ import { useDispatch, useSelector } from 'react-redux';
 import { disableBottom, disableNav, disableSlide, enableBottom, enableSlide, setSection } from '@/lib/slice';
 import { RootState } from '@/lib/store';
 
-type SliderProps = {
-    focusSlider: boolean;
-}
-
-const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
+const Slider = () => {
     const [itemIndex, setItemIndex] = useState(0);
     const [animationLock, setAnimationLock] = useState(false);
     const [windowSize, setWindowSize] = useState(0);
     const [maxRightTranslate, setMaxRightTranslate] = useState(500);
+    const [touchStart, setTouchStart] = useState<number | null>(null);
+    const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
     const audioRef = useRef<HTMLAudioElement>(null);
     const dispatch = useDispatch();
-    const focusNav = useSelector((state: RootState) => state.focusNav);
-    //const focusSlider = useSelector((state: RootState) => state.focusSlide);
-    const focusBottom = useSelector((state: RootState) => state.focusBottom);
+    const focusSlider = useSelector((state: RootState) => state.focusSlide);
 
+    const minSwipeDIstance = 50;
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const mobileScreenBreakPoint = 710;
@@ -157,10 +154,36 @@ const Slider: React.FC<SliderProps> = ({ focusSlider }) => {
         dispatch(enableBottom());
     }
 
+    const onTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+        setTouchEnd(null);
+        setTouchStart(e.targetTouches[0].clientX);
+    }
+
+    const onTouchMove = (e: React.TouchEvent<HTMLDivElement>) => setTouchEnd(e.targetTouches[0].clientX);
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) {
+            return;
+        }  
+
+        const distance = touchStart - touchEnd;
+        const nextSlideIndex = (distance >= 0) ? (itemIndex + 1) : (itemIndex - 1); // determine which direction to swipe
+
+        // check for min distance swipe
+        if (Math.abs(distance) < minSwipeDIstance) {
+            return;
+        }
+
+        slideTo(nextSlideIndex);
+    }
+
     return (
         <div 
             className={`absolute translate-x-[-1rem] w-screen h-[300px] flex gap-2 
             overflow-x-hidden overflow-y-auto`}
+            onTouchStart={onTouchStart}
+            onTouchEnd={onTouchEnd}
+            onTouchMove={onTouchMove}
         >
             
             <audio ref={audioRef} src="/audio/select-5.wav" />

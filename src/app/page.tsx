@@ -63,9 +63,7 @@ export default function Home() {
 
         <div className={`${focusBottom && 'translate-y-[-200%]'} duration-500`}>
           <Navigator showNav={focusNav} />
-          <Slider 
-            focusSlider={focusSlider}
-          />
+          <Slider />
         </div>
 
 

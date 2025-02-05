@@ -13,7 +13,7 @@ const ContactSection = () => {
   
   return (
     <SectionWrapper>
-      <h1 className='text-5xl mb-10 text-center'>CONTACT ME</h1>
+      <h1 className='text-2xl md:text-5xl mb-10 text-center'>CONTACT ME</h1>
 
       <form className='flex flex-col gap-5 max-w-[500px] mx-auto'>
         <Input placeholder='Name' />

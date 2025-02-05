@@ -164,8 +164,8 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
             {/* mobile nav options */}
             <div className={`${!showNav ? 'hidden' : 'md:hidden'} bg-blue-900 absolute top-0 left-[-20px] w-screen pt-20 px-5 z-[9] duration-500`}>
                 
-                <Profile className='mt-5 mb-10'/>
-                
+                <Profile className='my-10 ml-2'/>
+
                 {navOptions.map((item: NavOption, index:number) => (
                     <div 
                         key={index} 
