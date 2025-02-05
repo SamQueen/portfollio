@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { disableNav, disableSlide, enableNav, enableSlide } from '@/lib/slice';
 import { RootState } from '@/lib/store';
 import Profile from './Profile';
+import NavIcon from './NavIcon';
 
 type NavigatorProps = {
     showNav: boolean;
@@ -109,18 +110,12 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
             
             <audio ref={audioRef} src="/audio/select6.wav" />
             
-            <div 
-                className={`absolute top-10 cursor-pointer z-10`}
-                onClick={openNav}
-            >
-                <Image 
-                    src='/icons/bars.svg'
-                    alt='Bars icon'
-                    width={35}
-                    height={35}
+            <div className='absolute top-0 left-5 z-10'>
+                <NavIcon 
+                    openNav={openNav}
                 />
             </div>
-            
+
             <div className={` flex justify-between items-center absolute top-10 w-full pr-20`}>
                 <div 
                     className='cursor-pointer'
@@ -158,11 +153,11 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
                     <p>238</p>
                 </div>
                 
-                <div className='z-10'>{time}</div>
+                <div className='z-10 translate-x-[30px] md:translate-x-0'>{time}</div>
             </div>
 
             {/* mobile nav options */}
-            <div className={`${!showNav ? 'hidden' : 'md:hidden'} bg-blue-900 absolute top-0 left-[-20px] w-screen pt-20 px-5 z-[9] duration-500`}>
+            <div className={`${!showNav ? 'hidden' : 'md:hidden'} bg-blue-900 absolute top-0 left-[-20px] w-screen pt-20 pb-5 px-5 z-[9] duration-500`}>
                 
                 <Profile className='my-10 ml-2'/>
 
