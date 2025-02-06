@@ -5,6 +5,7 @@ import typescript from 'programming-languages-logos/src/typescript/typescript.pn
 import javascript from 'programming-languages-logos/src/javascript/javascript.png'
 
 // icons found at https://simpleicons.org/?q=redux
+// background images https://www.playstation.com/en-us/wallpapers/
 
 export const navOptions: NavOption[] = [
     {
