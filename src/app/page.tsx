@@ -56,7 +56,7 @@ export default function Home() {
   return (
     <div 
       className="bg-[#4c6cd7] w-screen h-screen px-5 relative bg-center bg-cover overflow-x-hidden overflow-y-auto pb-20" 
-      style={{ backgroundImage: 'url(/ps4background5.jpg)'}}
+      style={{ backgroundImage: 'url(/ps4background1.jpg)'}}
     >
 
         {/* <LoadingScreen /> */}

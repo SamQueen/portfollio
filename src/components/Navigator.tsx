@@ -9,6 +9,7 @@ import { disableNav, disableSlide, enableNav, enableSlide } from '@/lib/slice';
 import { RootState } from '@/lib/store';
 import Profile from './Profile';
 import NavIcon from './NavIcon';
+import Link from 'next/link';
 
 type NavigatorProps = {
     showNav: boolean;
@@ -162,8 +163,9 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
                 <Profile className='my-10 ml-2'/>
 
                 {navOptions.map((item: NavOption, index:number) => (
-                    <div 
+                    <Link
                         key={index} 
+                        href={item.link}
                         className={`${(currentIndex == index) ? 'border-white' : 'border-transparent'} flex cursor-pointer p-3 
                         border-b-2 hover:bg-[rgba(0,0,0,0.2)]`}
                         onClick={() => { handleItemClick(index) }}
@@ -175,16 +177,19 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
                             height={30}
                         />
                         <p className='pl-5 text-[1rem]'>{item.name}</p>
-                    </div>
+                    </Link>
                 ))}
             </div>
 
 
-            <div className={`${!showNav ? 'hidden' : 'hidden md:flex '} flex-wrap duration-500 justify-left md:justify-center items-baseline w-full gap-20 mb-10`}>
+            <div className={`${!showNav ? 'hidden' : 'hidden md:flex '} flex-wrap duration-500 justify-left md:justify-center 
+                items-baseline w-full gap-20 mb-10`}
+            >
                 {navOptions.map((item: NavOption, index:number) => (
-                    <div 
-                        key={index} 
-                        className={`${(currentIndex == index) ? 'border-white' : 'border-transparent'} cursor-pointer p-3 border-b-2`}
+                    <Link
+                        key={index}
+                        href={item.link}
+                        className={`${(currentIndex == index) ? 'border-white' : 'border-transparent'} cursor-pointer p-3 border-b-4`}
                         onClick={() => { handleItemClick(index) }}
                     >
                         <Image 
@@ -193,7 +198,7 @@ const Navigator: React.FC<NavigatorProps> = ({ showNav }) => {
                             width={30}
                             height={30}
                         />
-                    </div>
+                    </Link>
                 ))}
             </div>
         </nav>
