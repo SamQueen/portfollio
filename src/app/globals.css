@@ -24,3 +24,28 @@ body {
 .animate-skill-items {
   display: hidden;
 }
+
+.bottom-fade {
+  mask-image: linear-gradient(to bottom, black calc(100% - 100px), transparent 100%);
+}
+
+/* custom scrollbar */
+/* width */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(13, 13, 13, 0.2);
+}
+
+/* Handle */
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #ded9d9;
+}
+
+/* Handle on hover */
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #ff0404;
+}

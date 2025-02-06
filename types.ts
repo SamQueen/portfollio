@@ -4,6 +4,7 @@ export type NavOption = {
     name: string;
     iconPath: string;
     alt: string;
+    link: string;
 }
 
 export type SlideItem = {

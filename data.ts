@@ -5,31 +5,37 @@ import typescript from 'programming-languages-logos/src/typescript/typescript.pn
 import javascript from 'programming-languages-logos/src/javascript/javascript.png'
 
 // icons found at https://simpleicons.org/?q=redux
+// background images https://www.playstation.com/en-us/wallpapers/
 
 export const navOptions: NavOption[] = [
     {
         name: 'HOME',
         iconPath: './icons/house-solid.svg',
+        link: '',
         alt: '',
     },
     {
         name: 'ABOUT APPLICATION',
         iconPath: './icons/circle-question.svg',
+        link: '',
         alt: '',
     },
     {
         name: 'PROFESSIONAL PORTFOLIO',
         iconPath: './icons/user-tie-solid.svg',
+        link: '',
         alt: '',
     },
     {
         name: 'AWARDS',
         iconPath: './icons/trophy.svg',
+        link: '',
         alt: '',
     },
     {
         name: 'settings',
         iconPath: './icons/gear-solid.svg',
+        link: 'settings',
         alt: '',
     },
 ];
@@ -199,4 +205,68 @@ export const projects = [
             '/jobs/rasp.png',
         ]
     },
+]
+
+export const settingOptions = [
+    {
+        name: "Theme",
+        path: "",
+        imgPath: "/setting-icons/palette-solid.svg",
+    },
+    {
+        name: "Background Select",
+        path: "",
+        imgPath: "/setting-icons/image-solid.svg",
+    },
+    {
+        name: "Sound Effects",
+        path: "",
+        imgPath: "/setting-icons/headphones-solid.svg",
+    },
+    {
+        name: "Trophy System and Controls",
+        path: "",
+        imgPath: "/icons/trophy.svg",
+    },
+    {
+        name: "Username & Avatar Profile",
+        path: "",
+        imgPath: "/setting-icons/user-solid.svg",
+    },
+    {
+        name: "Login Settings",
+        path: "",
+        imgPath: "/setting-icons/arrow-right-to-bracket-solid.svg",
+    },
+    {
+        name: "Parental Controls",
+        path: "",
+        imgPath: "/setting-icons/lock-solid.svg",
+    },
+    {
+        name: "Network",
+        path: "",
+        imgPath: "/setting-icons/wifi-solid.svg",
+    },
+    {
+        name: "Devices",
+        path: "",
+        imgPath: "/setting-icons/gamepad-solid.svg",
+    },
+    {
+        name: "USB Storage Devices",
+        path: "",
+        imgPath: "/setting-icons/usb-brands-solid.svg",
+    },
+    {
+        name: "External Keyboard",
+        path: "",
+        imgPath: "/setting-icons/keyboard-solid.svg",
+    },
+    {
+        name: "Turn off Device",
+        path: "",
+        imgPath: "/setting-icons/power-off-solid.svg",
+    },
+    
 ]
