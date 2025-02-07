@@ -12,10 +12,15 @@ export type SlideItem = {
     section: string;
 }
 
+export type TechStack = {
+    name: string;
+    imgPath: string | StaticImageData;
+}
+
 export type JobType = {
     company: string;
     title: string;
     imgPath: string;
     desc: string;
-    techStack: { name: string; imgPath: string | StaticImageData }[];
+    techStack: TechStack[];
 }

@@ -152,10 +152,10 @@ export const projects = [
         key: 'project1',
         background: '/projects/figma2.png',
         techStack: [
-            '/icons/react.svg',
-            typescript,
-            '/icons/tailwindcss.svg',
-            '/icons/github.svg',
+            {name: 'React', imgPath: '/icons/react.svg'},
+            {name: 'Typescript', imgPath: typescript},
+            {name: 'Tailwind CSS', imgPath: '/icons/tailwindcss.svg'},
+            {name: 'Github', imgPath: '/icons/github.svg'},
         ]
     },
     {
@@ -167,10 +167,10 @@ export const projects = [
         key: 'project2',
         background: '',
         techStack: [
-            '/icons/react.svg',
-            typescript,
-            '/icons/tailwindcss.svg',
-            '/icons/git.svg',
+            {name: 'React', imgPath: '/icons/react.svg'},
+            {name: 'Typescript', imgPath: typescript},
+            {name: 'Tailwind CSS', imgPath: '/icons/tailwindcss.svg'},
+            {name: 'Git Version Control', imgPath: '/icons/git.svg'},
         ]
     },
     {
@@ -182,9 +182,9 @@ export const projects = [
         key: 'project3',
         background: '',
         techStack: [
-            '/icons/react.svg',
-            typescript,
-            '/icons/git.svg',
+            {name: 'React', imgPath: '/icons/react.svg'},
+            {name: 'Typescript', imgPath: typescript},
+            {name: 'Git Version Control', imgPath: '/icons/git.svg'},
         ]
     },
     {
@@ -196,9 +196,12 @@ export const projects = [
         key: 'project4',
         background: '',
         techStack: [
-            '/icons/next.svg',
-            javascript,
-            '/jobs/rasp.png',
+            {name: 'Next.js', imgPath: '/icons/next.svg'},
+            {name: 'Javascript', imgPath: javascript},
+            {name: 'express', imgPath: '/icons/expressjs.svg'},
+            {name: 'Node JS', imgPath: '/icons/nodedotjs.svg'},
+            {name: 'MySQL', imgPath: '/icons/mysql.svg'},
+            {name: 'AWS', imgPath: '/icons/aws.png'},
         ]
     },
 ]

@@ -12,7 +12,7 @@ const SkillsSection = () => {
           <div key={index} className='mb-16 items-center overflow-auto'>
             <p className='text-lg text-center mb-5'>{item.skillType}</p>
 
-            <div className='flex flex-wrap justify-center mb-10'>
+            <div className='flex flex-wrap justify-center '>
               {item.skillList.map((skill, index) => (
                 <div key={index} className='cursor-pointer w-32 animate-skill-items mb-10 md:mb-0'>
                   <Image 
@@ -24,7 +24,7 @@ const SkillsSection = () => {
                     priority
                   />
 
-                  <p className='mx-10 text-sm'>{skill.name}</p>
+                  <p className='mx-10 text-sm text-center'>{skill.name}</p>
                 </div>
               ))}
             </div>

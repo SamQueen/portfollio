@@ -2,9 +2,10 @@
 
 import React from 'react'
 import { projects } from '../../../data'
-import Image, { StaticImageData } from 'next/image'
+import Image from 'next/image'
 import Button from '../Button';
 import BackButton from '../BackButton';
+import TechStack from '../TechStack';
 
 type ProjectSectionProps = {
     projectKey: string;
@@ -20,7 +21,7 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
             className='relative mx-auto bg-repeat-none bg-cover bg-center text-white'
         >
             {/* opacity wrapper */}
-            <div className=' px-5 lg:px-32 py-10 md:py-20 bg-[rgba(10,10,10,0.8)]'>
+            <div className=' px-5 md:px-20 xl:px-32 py-10 md:py-20 bg-[rgba(10,10,10,0.8)]'>
 
                 <BackButton />
                 <div className='lg:flex justify-between gap-20'>
@@ -53,19 +54,9 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
                             <h1 className='text-lg  p-3 my-10'>{project?.desc || ''}</h1>
                         </div>
 
-                        <ul className='flex gap-8'>
-                            {project?.techStack.map((path: string | StaticImageData, index: number) => (
-                                <li key={index}>
-                                    <Image 
-                                        src={path}
-                                        width={32}
-                                        height={32}
-                                        alt=""
-                                    />
-                                </li>
-                            ))}
-                        </ul>
-
+                        <TechStack 
+                            stack={project.techStack}
+                        />
                     </div>
                 </div>
                 

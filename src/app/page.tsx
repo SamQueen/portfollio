@@ -51,12 +51,12 @@ export default function Home() {
     return () => {
       window.removeEventListener("keydown", handleKeyPress);
     }
-  }, [focusNav, focusSlider, focusBottom]);
+  }, [focusNav, focusSlider, focusBottom, dispatch]);
 
   return (
     <div 
       className="bg-[#4c6cd7] w-screen h-screen px-5 relative bg-center bg-cover overflow-x-hidden overflow-y-auto pb-20" 
-      style={{ backgroundImage: 'url(/ps4background1.jpg)'}}
+      style={{ backgroundImage: 'url(/ps4background2.jpg)'}}
     >
 
         {/* <LoadingScreen /> */}
