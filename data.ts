@@ -69,10 +69,6 @@ export const slideItems: SlideItem[] = [
         imgPath: '/projects/aboutApp.png', 
         section: "info"
     },
-    { 
-        imgPath: '/projects/aboutApp.png', 
-        section: "info"
-    },
 ];
 
 export const skills = [
