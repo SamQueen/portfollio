@@ -150,8 +150,8 @@ export const projects = [
     {
         name: 'Startup 3 -  React App',
         desc: 'A fully responsive web application developed based on the provided Figma design, ensuring seamless user experience and pixel-perfect implementation. The project includes attention to detail in translating the design into functional code, with optimized performance and cross-browser compatibility.',
-        gitLink: '',
-        demoLink: '',
+        gitLink: 'https://github.com/SamQueen/figma-practice',
+        demoLink: 'https://figmapractice22.netlify.app/',
         imgPath: '/projects/figma.png',
         key: 'project1',
         background: '/projects/figma2.png',
@@ -165,8 +165,8 @@ export const projects = [
     {
         name: 'Neflix Clone - React App',
         desc: "Presenting a React-based portfolio project showcasing a Netflix-inspired streaming platform, integrated with the TMDB API for an extensive collection of movies and TV shows.",
-        gitLink: '',
-        demoLink: '',
+        gitLink: 'https://github.com/SamQueen/movie-app',
+        demoLink: 'https://havesomemovies.netlify.app/?fbclid=IwAR1NxYMgHKLDX7DU7Hs3bIVy6HOL7WeyrPtP-ks2y2xzFR1ZBnCcL4F4CwA',
         imgPath: '/projects/net.png',
         key: 'project2',
         background: '',
@@ -180,8 +180,8 @@ export const projects = [
     {
         name: 'Flexible Slide - NPM Package',
         desc: 'A responsive React carousel designed for integration into my Netflix clone project, encapsulated within an npm package for versatile usage across various projects.',
-        gitLink: '',
-        demoLink: '',
+        gitLink: 'https://github.com/SamQueen/react-flexible-slide',
+        demoLink: 'https://www.npmjs.com/package/react-flexible-slide?activeTab=readme',
         imgPath: '/projects/npm.png',
         key: 'project3',
         background: '',
@@ -194,8 +194,8 @@ export const projects = [
     {
         name: 'Picture Perfect - Next.js Project',
         desc: "An Instagram-inspired CRUD application enabling users to log in, share photos, comment on posts, and personalize their profiles.",
-        gitLink: '',
-        demoLink: '',
+        gitLink: 'https://github.com/SamQueen/Picture-Perfect-Client',
+        demoLink: 'https://www.pictureper.com/sign-in',
         imgPath: '/projects/pictureper.png',
         key: 'project4',
         background: '',
