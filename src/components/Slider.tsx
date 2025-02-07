@@ -24,7 +24,7 @@ const Slider = () => {
     const translateAmount = 210;
     const screenBreakPoint = 1100;
     const mobileScreenBreakPoint = 710;
-    const focusStyle = 'border-4 border-white bg-black items-center'
+    const focusStyle = 'border-2 border-white bg-black items-center glow'
 
     // init offset carousel items 
     useEffect(() => {
@@ -180,7 +180,7 @@ const Slider = () => {
 
     return (
         <div 
-            className={`absolute translate-x-[-1rem] w-screen h-[300px] flex gap-2 
+            className={`absolute translate-x-[-1rem] w-screen h-[330px] items-center flex gap-2 
             overflow-x-hidden overflow-y-auto`}
             onTouchStart={onTouchStart}
             onTouchEnd={onTouchEnd}
@@ -194,7 +194,7 @@ const Slider = () => {
                     key={index}
                     onClick={() => {slideTo(index)}}
                     className={`slide-item flex-grow-0 flex-shrink-0 cursor-pointer transform transition-transform duration-500 
-                               relative ${(index === itemIndex && focusSlider) && focusStyle}`}
+                               relative h-[300px] ${(index === itemIndex && focusSlider) && focusStyle}`}
                 >
                     <Image 
                         src={item.imgPath}
