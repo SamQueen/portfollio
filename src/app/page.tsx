@@ -12,6 +12,7 @@ import ExperienceSection from "@/components/sections/ExperienceSection";
 import ContactSection from "@/components/sections/ContactSection";
 import ProjectSection from '@/components/sections/ProjectSection';
 import InfoSection from '@/components/sections/InfoSection';
+import useNotifyVisit from '@/hooks/useNotifyVisit';
 
 export default function Home() {
   // redux tools
@@ -20,6 +21,8 @@ export default function Home() {
   const focusBottom = useSelector((state: RootState) => state.focusBottom);
   const activeSection = useSelector((state: RootState) => state.activeSection);
   const dispatch = useDispatch();
+
+  useNotifyVisit();
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
