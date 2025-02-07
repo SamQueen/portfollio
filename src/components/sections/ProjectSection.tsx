@@ -7,14 +7,16 @@ import Button from '../Button';
 import BackButton from '../BackButton';
 
 type ProjectSectionProps = {
-    projectKey: string | undefined;
+    projectKey: string;
 }
 
 const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
     const project = projects.find(p => p.key === projectKey);
 
+    if (!project) return <></>
+
     return (
-        <div  style={{ backgroundImage: `url(${project?.background})`}}
+        <div  style={{ backgroundImage: `url(${project.background})`}}
             className='relative mx-auto bg-repeat-none bg-cover bg-center text-white'
         >
             {/* opacity wrapper */}
@@ -29,8 +31,8 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
                             width={320}
                             alt=""
                         />
-                        <Button text="START DEMO" className='my-1' />
-                        <Button text="GITHUB REPO" />
+                        <Button link={project.demoLink} text="START DEMO" className='my-1' />
+                        <Button link={project.gitLink} text="GITHUB REPO" />
                     </div>
                     
                     <div className='w-full lg:w-[calc(100%-320px)] flex flex-col justify-between'>
@@ -39,13 +41,13 @@ const ProjectSection = ({ projectKey }: ProjectSectionProps) => {
 
                             <div className='lg:hidden w-[250px] mt-10 mx-auto'>
                                 <Image 
-                                    src={project?.imgPath || ''}
+                                    src={project.imgPath || ''}
                                     height={0}
                                     width={250}
                                     alt=""
                                 />
-                                <Button text="START DEMO" className='my-1' />
-                                <Button text="GITHUB REPO" />
+                                <Button link={project.demoLink} text="START DEMO" className='my-1' />
+                                <Button link={project.gitLink} text="GITHUB REPO" />
                             </div>
 
                             <h1 className='text-lg  p-3 my-10'>{project?.desc || ''}</h1>
