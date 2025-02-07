@@ -30,7 +30,7 @@ const SettingSelect = () => {
                                 alt=""
                             />
                             
-                            <p className="text-2xl ml-5 w-full">{option.name}</p>
+                            <p className="text-lg md:text-2xl ml-5 w-full">{option.name}</p>
                         </div>
 
                         {/* line */}

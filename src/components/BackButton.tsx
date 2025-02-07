@@ -18,10 +18,10 @@ const BackButton = () => {
         className='bg-white w-10 h-10 cursor-pointer flex justify-center items-center mb-10'
     >
         <Image
-        src="/icons/arrow-up-solid.svg"
-        alt="Back"
-        width={20}
-        height={20}
+            src="/icons/arrow-up-solid.svg"
+            alt="Back"
+            width={20}
+            height={20}
         />
     </div>
     )
