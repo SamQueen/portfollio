@@ -13,6 +13,7 @@ import ContactSection from "@/components/sections/ContactSection";
 import ProjectSection from '@/components/sections/ProjectSection';
 import InfoSection from '@/components/sections/InfoSection';
 import useNotifyVisit from '@/hooks/useNotifyVisit';
+import LoadingScreen from '@/components/LoadingScreen';
 
 export default function Home() {
   // redux tools
@@ -62,49 +63,49 @@ export default function Home() {
       style={{ backgroundImage: 'url(/ps4background2.jpg)'}}
     >
 
-        {/* <LoadingScreen /> */}
+      <LoadingScreen />
 
-        <div className={`${focusBottom && 'translate-y-[-200%]'} duration-500`}>
-          <Navigator showNav={focusNav} />
-          <Slider />
-        </div>
+      <div className={`${focusBottom && 'translate-y-[-200%]'} duration-500`}>
+        <Navigator showNav={focusNav} />
+        <Slider />
+      </div>
 
 
-        {(activeSection === 'about') && (
-          <AboutSection />
-        )}
+      {(activeSection === 'about') && (
+        <AboutSection />
+      )}
 
-        {(activeSection === 'skills') && (
-          <SkillsSection />
-        )}
+      {(activeSection === 'skills') && (
+        <SkillsSection />
+      )}
 
-        {(activeSection === 'experience') && (
-          <ExperienceSection />
-        )}
+      {(activeSection === 'experience') && (
+        <ExperienceSection />
+      )}
 
-        {(activeSection === 'contact') && (
-          <ContactSection />
-        )}
+      {(activeSection === 'contact') && (
+        <ContactSection />
+      )}
 
-        {(activeSection === 'project1') && (
-          <ProjectSection projectKey={activeSection} />
-        )}
+      {(activeSection === 'project1') && (
+        <ProjectSection projectKey={activeSection} />
+      )}
 
-        {(activeSection === 'project2') && (
-          <ProjectSection projectKey={activeSection} />
-        )}
+      {(activeSection === 'project2') && (
+        <ProjectSection projectKey={activeSection} />
+      )}
 
-        {(activeSection === 'project3') && (
-          <ProjectSection projectKey={activeSection} />
-        )}
+      {(activeSection === 'project3') && (
+        <ProjectSection projectKey={activeSection} />
+      )}
 
-        {(activeSection === 'project4') && (
-          <ProjectSection projectKey={activeSection} />
-        )}
+      {(activeSection === 'project4') && (
+        <ProjectSection projectKey={activeSection} />
+      )}
 
-        {(activeSection ==='info') && (
-          <InfoSection />
-        )}
+      {(activeSection ==='info') && (
+        <InfoSection />
+      )}
     </div>
   );
 }

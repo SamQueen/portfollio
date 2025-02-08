@@ -2,14 +2,11 @@ import React from 'react'
 import SectionWrapper from './SectionWrapper'
 import Input from '../Input'
 import Image from 'next/image'
+import { socials } from '../../../data'
+import Link from 'next/link'
 
 const ContactSection = () => {
-  const socialIcons = [
-    '/social-icons/linkedin.png',
-    '/social-icons/github.png',
-    '/social-icons/gmail.png',
-    '/social-icons/upwork.png',
-  ]
+  
   
   return (
     <SectionWrapper>
@@ -29,14 +26,16 @@ const ContactSection = () => {
       <p className='my-10 text-center text-xl'>or</p>
 
       <ul className='mx-auto flex justify-center gap-10 items-center'>
-        {socialIcons.map((path: string, index: number) => (
+        {socials.map((item, index: number) => (
           <li key={index} className='cursor-pointer'>
-            <Image 
-              src={path}
-              height={35}
-              width={35}
-              alt=""
-            />
+            <Link href={item.link} target='_blank'>
+              <Image 
+                src={item.imgPath}
+                height={35}
+                width={35}
+                alt=""
+              />
+            </Link>
           </li>
         ))}
       </ul>
