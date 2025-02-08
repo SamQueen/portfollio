@@ -269,3 +269,22 @@ export const settingOptions = [
     },
     
 ]
+
+export const socials = [
+    {
+        link: 'https://www.linkedin.com/in/samuel-queen-599298272/',
+        imgPath: '/social-icons/linkedin.png'
+    },
+    {
+        link: 'https://github.com/SamQueen',
+        imgPath: '/social-icons/github.png'
+    },
+    {
+        link: '',
+        imgPath: '/social-icons/gmail.png'
+    },
+    {
+        link: 'http://upwork.com/',
+        imgPath: '/social-icons/upwork.png'
+    },
+]

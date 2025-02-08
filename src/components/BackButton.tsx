@@ -15,7 +15,7 @@ const BackButton = () => {
     return (
     <div
         onClick={() => {handleClose()}}
-        className='bg-white w-10 h-10 cursor-pointer flex justify-center items-center mb-10'
+        className='bg-white w-10 h-10 cursor-pointer flex justify-center items-center mb-10 z-50 relative'
     >
         <Image
             src="/icons/arrow-up-solid.svg"
