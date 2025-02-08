@@ -8,6 +8,13 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
     }
 
     const webHookUrl: string | undefined | Request = process.env.DISCORD_WEBHOOK;
+    const userAgent = req.headers['user-agent'];
+    const forwardedFor = req.headers['x-forwarded-for'] || req.socket?.remoteAddress || '';
+    const userIp = typeof forwardedFor === 'string' ? forwardedFor.split(',')[0].trim() : 'Unknown';
+
+    // Send location request
+    const location = await fetch(`https://ipapi.co/${userIp}/json/`);
+    const locationData = await location.json();
 
     if (!webHookUrl) {
         return res.status(500).json({ success: false, error: "discord webhook not defined"});
@@ -18,7 +25,11 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
             method: "Post",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({
-                content: `🚀 New portfolio visitor at ${new Date().toLocaleString()}!`,
+                content: `👀 Profile clicked!
+                - **TIME:** ${new Date().toLocaleString()} 
+                - **IP:** ${userIp} 
+                - **Location:** ${locationData.city}, ${locationData.region}, ${locationData.country_name}
+                - **User-Agent:** ${userAgent}`
             })
         })
 
