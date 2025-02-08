@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import * as motion from "motion/react-client"
-import { AnimatePresence } from "motion/react"
 
 const draw = {
     hidden: { pathLength: 0, opacity: 0 },
