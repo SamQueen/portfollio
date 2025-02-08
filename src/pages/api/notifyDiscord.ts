@@ -28,7 +28,7 @@ export default async function handler (req: NextApiRequest, res: NextApiResponse
                 content: `👀 Profile clicked!
                 - **TIME:** ${new Date().toLocaleString()} 
                 - **IP:** ${userIp} 
-                - **Location:** ${locationData}
+                - **Location:** ${locationData.city}, ${locationData.region}, ${locationData.country_name}
                 - **User-Agent:** ${userAgent}`
             })
         })
