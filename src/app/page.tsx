@@ -1,7 +1,7 @@
 "use client"
 import Slider from '../components/Slider'
 import Navigator from "@/components/Navigator";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import AboutSection from "@/components/sections/AboutSection";
 
 import { disableBottom, disableNav, disableSlide, enableNav, enableSlide, setSection } from "@/lib/slice";
@@ -16,6 +16,8 @@ import useNotifyVisit from '@/hooks/useNotifyVisit';
 import LoadingScreen from '@/components/LoadingScreen';
 
 export default function Home() {
+  const [load, setLoad] = useState(false);
+
   // redux tools
   const focusNav = useSelector((state: RootState) => state.focusNav);
   const focusSlider = useSelector((state: RootState) => state.focusSlide);
@@ -24,6 +26,17 @@ export default function Home() {
   const dispatch = useDispatch();
 
   useNotifyVisit();
+
+  useEffect(() => {
+    // ensure application is running on client side
+    if (typeof window !== 'undefined') {
+      const data = sessionStorage.getItem('notified');
+
+      if (!data) {
+        setLoad(true);
+      }
+    }
+  }, []);
 
   useEffect(() => {
     const handleKeyPress = (event: KeyboardEvent) => {
@@ -60,10 +73,12 @@ export default function Home() {
   return (
     <div 
       className="bg-[#4c6cd7] w-screen h-screen px-5 relative bg-center bg-cover overflow-x-hidden overflow-y-auto pb-20" 
-      style={{ backgroundImage: 'url(/ps4background2.jpg)'}}
+      style={{ backgroundImage: 'url(/ps4background3.jpg)'}}
     >
 
-      <LoadingScreen />
+      {load && (
+        <LoadingScreen />
+      )}
 
       <div className={`${focusBottom && 'translate-y-[-200%]'} duration-500`}>
         <Navigator showNav={focusNav} />

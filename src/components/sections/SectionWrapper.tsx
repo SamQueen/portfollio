@@ -16,7 +16,7 @@ const SectionWrapper: React.FC<SectionWrapperProps> = ({ children }) => {
           duration: 0.3,
           scale: { type: "spring", visualDuration: 0.3, bounce: 0.4 },
       }}
-      className='bg-[rgba(50,28,62,0.9)] text-white p-10 lg:ml-[170px] xl:ml-[350px] 
+      className='bg-[rgba(33,33,34,0.9)] text-white p-10 lg:ml-[170px] xl:ml-[350px] 
       lg:w-[calc(100%-250px)] xl:w-[calc(100%-350px)] items-center]'
     >
       <BackButton />
